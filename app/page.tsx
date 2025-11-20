@@ -48,10 +48,10 @@ export default function DashboardPage() {
       <Header />
       <Navigation />
 
-      <main className="container mx-auto px-4 py-8">
-        <div className="mb-8">
-          <h2 className="text-3xl font-bold text-[rgb(49,105,78)] mb-2">Inventory Dashboard</h2>
-          <p className="text-muted-foreground">Manage and monitor your restaurant inventory efficiently</p>
+      <main className="container mx-auto px-4 py-6 md:py-8">
+        <div className="mb-6 md:mb-8">
+          <h2 className="text-2xl md:text-3xl font-bold text-[rgb(49,105,78)] mb-2">Inventory Dashboard</h2>
+          <p className="text-sm md:text-base text-muted-foreground">Manage and monitor your restaurant inventory efficiently</p>
         </div>
 
         {isLoading ? (
@@ -60,57 +60,57 @@ export default function DashboardPage() {
           </div>
         ) : (
           <>
-            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4 mb-8">
+            <div className="grid gap-4 md:gap-6 grid-cols-2 lg:grid-cols-4 mb-6 md:mb-8">
               <Card className="border-[rgb(101,140,88)]">
                 <CardHeader className="flex flex-row items-center justify-between pb-2">
-                  <CardTitle className="text-sm font-medium text-muted-foreground">Total Items</CardTitle>
-                  <Boxes className="w-4 h-4 text-[rgb(101,140,88)]" />
+                  <CardTitle className="text-xs md:text-sm font-medium text-muted-foreground">Total Items</CardTitle>
+                  <Boxes className="w-3 h-3 md:w-4 md:h-4 text-[rgb(101,140,88)]" />
                 </CardHeader>
                 <CardContent>
-                  <div className="text-2xl font-bold text-[rgb(49,105,78)]">{stats.totalItems}</div>
-                  <p className="text-xs text-muted-foreground mt-1">Active inventory items</p>
+                  <div className="text-lg md:text-2xl font-bold text-[rgb(49,105,78)]">{stats.totalItems}</div>
+                  <p className="text-[10px] md:text-xs text-muted-foreground mt-1">Active inventory items</p>
                 </CardContent>
               </Card>
 
               <Card className="border-[rgb(101,140,88)]">
                 <CardHeader className="flex flex-row items-center justify-between pb-2">
-                  <CardTitle className="text-sm font-medium text-muted-foreground">Low Stock Items</CardTitle>
-                  <AlertTriangle className="w-4 h-4 text-destructive" />
+                  <CardTitle className="text-xs md:text-sm font-medium text-muted-foreground">Low Stock Items</CardTitle>
+                  <AlertTriangle className="w-3 h-3 md:w-4 md:h-4 text-destructive" />
                 </CardHeader>
                 <CardContent>
-                  <div className="text-2xl font-bold text-destructive">{stats.lowStockCount}</div>
-                  <p className="text-xs text-muted-foreground mt-1">Need immediate attention</p>
+                  <div className="text-lg md:text-2xl font-bold text-destructive">{stats.lowStockCount}</div>
+                  <p className="text-[10px] md:text-xs text-muted-foreground mt-1">Need immediate attention</p>
                 </CardContent>
               </Card>
 
               <Card className="border-[rgb(101,140,88)]">
                 <CardHeader className="flex flex-row items-center justify-between pb-2">
-                  <CardTitle className="text-sm font-medium text-muted-foreground">Categories</CardTitle>
-                  <Package className="w-4 h-4 text-[rgb(101,140,88)]" />
+                  <CardTitle className="text-xs md:text-sm font-medium text-muted-foreground">Categories</CardTitle>
+                  <Package className="w-3 h-3 md:w-4 md:h-4 text-[rgb(101,140,88)]" />
                 </CardHeader>
                 <CardContent>
-                  <div className="text-2xl font-bold text-[rgb(49,105,78)]">{stats.categoriesCount}</div>
-                  <p className="text-xs text-muted-foreground mt-1">{stats.categoriesList || "No categories yet"}</p>
+                  <div className="text-lg md:text-2xl font-bold text-[rgb(49,105,78)]">{stats.categoriesCount}</div>
+                  <p className="text-[10px] md:text-xs text-muted-foreground mt-1 truncate">{stats.categoriesList || "No categories yet"}</p>
                 </CardContent>
               </Card>
 
               <Card className="border-[rgb(101,140,88)]">
                 <CardHeader className="flex flex-row items-center justify-between pb-2">
-                  <CardTitle className="text-sm font-medium text-muted-foreground">Inventory Value</CardTitle>
-                  <TrendingUp className="w-4 h-4 text-[rgb(101,140,88)]" />
+                  <CardTitle className="text-xs md:text-sm font-medium text-muted-foreground">Inventory Value</CardTitle>
+                  <TrendingUp className="w-3 h-3 md:w-4 md:h-4 text-[rgb(101,140,88)]" />
                 </CardHeader>
                 <CardContent>
-                  <div className="text-2xl font-bold text-[rgb(49,105,78)]">
+                  <div className="text-lg md:text-2xl font-bold text-[rgb(49,105,78)]">
                     LKR {stats.totalValue.toLocaleString()}
                   </div>
-                  <p className="text-xs text-muted-foreground mt-1">Estimated total value</p>
+                  <p className="text-[10px] md:text-xs text-muted-foreground mt-1">Estimated total value</p>
                 </CardContent>
               </Card>
             </div>
           </>
         )}
 
-        <div className="grid gap-6 lg:grid-cols-2">
+        <div className="grid gap-4 md:gap-6 grid-cols-1 lg:grid-cols-2">
           <Card className="border-[rgb(101,140,88)]">
             <CardHeader>
               <CardTitle className="text-[rgb(49,105,78)]">Quick Actions</CardTitle>

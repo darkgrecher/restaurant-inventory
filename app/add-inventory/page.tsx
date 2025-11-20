@@ -109,11 +109,11 @@ export default function AddInventoryPage() {
       <Header />
       <Navigation />
 
-      <main className="container mx-auto px-4 py-12 flex items-center justify-center min-h-[calc(100vh-180px)]">
+      <main className="container mx-auto px-4 py-6 md:py-12 flex items-center justify-center min-h-[calc(100vh-180px)]">
         <div className="w-full max-w-3xl">
-          <div className="mb-8 text-center">
-            <h2 className="text-4xl font-bold text-[rgb(49,105,78)] mb-3">Add New Inventory Item</h2>
-            <p className="text-[rgb(49,105,78)]/70 text-lg">Enter the details of the new inventory item below</p>
+          <div className="mb-6 md:mb-8 text-center">
+            <h2 className="text-2xl md:text-4xl font-bold text-[rgb(49,105,78)] mb-2 md:mb-3">Add New Inventory Item</h2>
+            <p className="text-[rgb(49,105,78)]/70 text-base md:text-lg">Enter the details of the new inventory item below</p>
           </div>
 
           {showSuccess && (
@@ -129,16 +129,16 @@ export default function AddInventoryPage() {
 
           <Card className="border-[rgb(101,140,88)]/30 shadow-lg">
             <CardHeader className="bg-white border-b border-[rgb(101,140,88)]/20">
-              <CardTitle className="text-[rgb(49,105,78)] text-xl">Item Information</CardTitle>
+              <CardTitle className="text-[rgb(49,105,78)] text-lg md:text-xl">Item Information</CardTitle>
               <CardDescription className="text-[rgb(49,105,78)]/60">
                 Fill in all required fields marked with *
               </CardDescription>
             </CardHeader>
-            <CardContent className="p-8 bg-white">
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid gap-6">
+            <CardContent className="p-4 md:p-8 bg-white">
+              <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
+                <div className="grid gap-4 md:gap-6">
                   <div className="grid gap-2">
-                    <Label htmlFor="name" className="text-[rgb(49,105,78)] font-semibold">
+                    <Label htmlFor="name" className="text-[rgb(49,105,78)] font-semibold text-sm md:text-base">
                       Item Name *
                     </Label>
                     <Input
@@ -148,12 +148,12 @@ export default function AddInventoryPage() {
                       value={formData.name}
                       onChange={handleChange}
                       required
-                      className="border-[rgb(101,140,88)]/30 focus:border-[rgb(49,105,78)] h-11"
+                      className="border-[rgb(101,140,88)]/30 focus:border-[rgb(49,105,78)] h-10 md:h-11"
                     />
                   </div>
 
                   <div className="grid gap-2">
-                    <Label htmlFor="category" className="text-[rgb(49,105,78)] font-semibold">
+                    <Label htmlFor="category" className="text-[rgb(49,105,78)] font-semibold text-sm md:text-base">
                       Category *
                     </Label>
                     <Select
@@ -161,7 +161,7 @@ export default function AddInventoryPage() {
                       onValueChange={(value) => handleSelectChange("category", value)}
                       required
                     >
-                      <SelectTrigger className="border-[rgb(101,140,88)]/30 focus:border-[rgb(49,105,78)] h-11">
+                      <SelectTrigger className="border-[rgb(101,140,88)]/30 focus:border-[rgb(49,105,78)] h-10 md:h-11">
                         <SelectValue placeholder="Select a category" />
                       </SelectTrigger>
                       <SelectContent>
@@ -174,9 +174,9 @@ export default function AddInventoryPage() {
                     </Select>
                   </div>
 
-                  <div className="grid md:grid-cols-2 gap-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                     <div className="grid gap-2">
-                      <Label htmlFor="quantity" className="text-[rgb(49,105,78)] font-semibold">
+                      <Label htmlFor="quantity" className="text-[rgb(49,105,78)] font-semibold text-sm md:text-base">
                         Quantity *
                       </Label>
                       <Input
@@ -188,12 +188,12 @@ export default function AddInventoryPage() {
                         value={formData.quantity || ""}
                         onChange={handleChange}
                         required
-                        className="border-[rgb(101,140,88)]/30 focus:border-[rgb(49,105,78)] h-11"
+                        className="border-[rgb(101,140,88)]/30 focus:border-[rgb(49,105,78)] h-10 md:h-11"
                       />
                     </div>
 
                     <div className="grid gap-2">
-                      <Label htmlFor="unit" className="text-[rgb(49,105,78)] font-semibold">
+                      <Label htmlFor="unit" className="text-[rgb(49,105,78)] font-semibold text-sm md:text-base">
                         Unit *
                       </Label>
                       <Select
@@ -201,7 +201,7 @@ export default function AddInventoryPage() {
                         onValueChange={(value) => handleSelectChange("unit", value)}
                         required
                       >
-                        <SelectTrigger className="border-[rgb(101,140,88)]/30 focus:border-[rgb(49,105,78)] h-11">
+                        <SelectTrigger className="border-[rgb(101,140,88)]/30 focus:border-[rgb(49,105,78)] h-10 md:h-11">
                           <SelectValue placeholder="Select a unit" />
                         </SelectTrigger>
                         <SelectContent>
@@ -215,9 +215,9 @@ export default function AddInventoryPage() {
                     </div>
                   </div>
 
-                  <div className="grid md:grid-cols-2 gap-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                     <div className="grid gap-2">
-                      <Label htmlFor="minStock" className="text-[rgb(49,105,78)] font-semibold">
+                      <Label htmlFor="minStock" className="text-[rgb(49,105,78)] font-semibold text-sm md:text-base">
                         Minimum Stock Level *
                       </Label>
                       <Input
@@ -229,13 +229,13 @@ export default function AddInventoryPage() {
                         value={formData.minStock || ""}
                         onChange={handleChange}
                         required
-                        className="border-[rgb(101,140,88)]/30 focus:border-[rgb(49,105,78)] h-11"
+                        className="border-[rgb(101,140,88)]/30 focus:border-[rgb(49,105,78)] h-10 md:h-11"
                       />
                       <p className="text-xs text-[rgb(49,105,78)]/60">Alert when stock falls below this level</p>
                     </div>
 
                     <div className="grid gap-2">
-                      <Label htmlFor="price" className="text-[rgb(49,105,78)] font-semibold">
+                      <Label htmlFor="price" className="text-[rgb(49,105,78)] font-semibold text-sm md:text-base">
                         Price per Unit (LKR) *
                       </Label>
                       <Input
@@ -247,13 +247,13 @@ export default function AddInventoryPage() {
                         value={formData.price || ""}
                         onChange={handleChange}
                         required
-                        className="border-[rgb(101,140,88)]/30 focus:border-[rgb(49,105,78)] h-11"
+                        className="border-[rgb(101,140,88)]/30 focus:border-[rgb(49,105,78)] h-10 md:h-11"
                       />
                     </div>
                   </div>
 
                   <div className="grid gap-2">
-                    <Label htmlFor="supplier" className="text-[rgb(49,105,78)] font-semibold">
+                    <Label htmlFor="supplier" className="text-[rgb(49,105,78)] font-semibold text-sm md:text-base">
                       Supplier
                     </Label>
                     <Input
@@ -262,15 +262,15 @@ export default function AddInventoryPage() {
                       placeholder="Supplier name (optional)"
                       value={formData.supplier}
                       onChange={handleChange}
-                      className="border-[rgb(101,140,88)]/30 focus:border-[rgb(49,105,78)] h-11"
+                      className="border-[rgb(101,140,88)]/30 focus:border-[rgb(49,105,78)] h-10 md:h-11"
                     />
                   </div>
                 </div>
 
-                <div className="flex gap-4 pt-6 border-t border-[rgb(101,140,88)]/20">
+                <div className="flex flex-col md:flex-row gap-3 md:gap-4 pt-4 md:pt-6 border-t border-[rgb(101,140,88)]/20">
                   <Button
                     type="submit"
-                    className="flex-1 bg-[rgb(49,105,78)] hover:bg-[rgb(101,140,88)] text-white h-12 text-base font-semibold"
+                    className="flex-1 bg-[rgb(49,105,78)] hover:bg-[rgb(101,140,88)] text-white h-11 md:h-12 text-sm md:text-base font-semibold"
                   >
                     Add Item to Inventory
                   </Button>
@@ -278,7 +278,7 @@ export default function AddInventoryPage() {
                     type="button"
                     variant="outline"
                     onClick={() => router.push("/inventory")}
-                    className="border-[rgb(101,140,88)]/40 text-[rgb(49,105,78)] hover:bg-[rgb(240,228,145)]/20 h-12 px-8"
+                    className="border-[rgb(101,140,88)]/40 text-[rgb(49,105,78)] hover:bg-[rgb(240,228,145)]/20 h-11 md:h-12 md:px-8"
                   >
                     Cancel
                   </Button>

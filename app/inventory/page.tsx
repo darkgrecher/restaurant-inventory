@@ -142,10 +142,10 @@ export default function InventoryPage() {
       <Header />
       <Navigation />
 
-      <main className="container mx-auto px-4 py-8">
-        <div className="mb-8">
-          <h2 className="text-3xl font-bold text-[rgb(49,105,78)] mb-2">Inventory Management</h2>
-          <p className="text-muted-foreground">View, update, and manage all inventory items</p>
+      <main className="container mx-auto px-4 py-6 md:py-8">
+        <div className="mb-6 md:mb-8">
+          <h2 className="text-2xl md:text-3xl font-bold text-[rgb(49,105,78)] mb-2">Inventory Management</h2>
+          <p className="text-sm md:text-base text-muted-foreground">View, update, and manage all inventory items</p>
         </div>
 
         <div className="mb-6 space-y-4">

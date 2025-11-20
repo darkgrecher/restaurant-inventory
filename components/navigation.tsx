@@ -16,8 +16,8 @@ export function Navigation() {
 
   return (
     <nav className="bg-white border-b-2 border-[rgb(187,200,99)] shadow-sm">
-      <div className="container mx-auto px-4">
-        <div className="flex gap-1">
+      <div className="container mx-auto px-2 md:px-4">
+        <div className="flex gap-1 overflow-x-auto">
           {links.map((link) => {
             const Icon = link.icon
             const isActive = pathname === link.href
@@ -27,12 +27,13 @@ export function Navigation() {
                 key={link.href}
                 href={link.href}
                 className={cn(
-                  "flex items-center gap-3 px-8 py-4 text-base font-medium transition-all relative group",
+                  "flex items-center gap-2 md:gap-3 px-3 md:px-8 py-3 md:py-4 text-sm md:text-base font-medium transition-all relative group whitespace-nowrap",
                   isActive ? "text-[rgb(49,105,78)]" : "text-[rgb(101,140,88)] hover:text-[rgb(49,105,78)]",
                 )}
               >
-                <Icon className={cn("w-5 h-5 transition-transform group-hover:scale-110", isActive && "scale-110")} />
-                <span>{link.label}</span>
+                <Icon className={cn("w-4 h-4 md:w-5 md:h-5 transition-transform group-hover:scale-110", isActive && "scale-110")} />
+                <span className="hidden sm:inline md:inline">{link.label}</span>
+                <span className="sm:hidden text-xs">{link.label.split(' ')[0]}</span>
                 {isActive && (
                   <div className="absolute bottom-0 left-0 right-0 h-1 bg-[rgb(49,105,78)] rounded-t-full" />
                 )}
