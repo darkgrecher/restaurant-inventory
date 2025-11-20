@@ -138,13 +138,13 @@ export default function LoginPage() {
             </form>
 
             {/* Demo Credentials Info */}
-            <div className="mt-6 p-4 bg-blue-50 border border-blue-200 rounded-md">
+            {/* <div className="mt-6 p-4 bg-blue-50 border border-blue-200 rounded-md">
               <p className="text-xs text-blue-800 text-center">
                 <strong>Demo Credentials:</strong><br />
                 Username: inventoyadmin<br />
                 Password: inventory@123
               </p>
-            </div>
+            </div> */}
           </CardContent>
         </Card>
 

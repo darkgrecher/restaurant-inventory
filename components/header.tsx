@@ -38,21 +38,21 @@ export function Header() {
 
           <div className="flex items-center gap-2 md:gap-4">
             {/* Contact Info - Hidden on mobile */}
-            <div className="text-right hidden lg:block">
+            {/* <div className="text-right hidden lg:block">
               <div className="text-sm text-muted-foreground">
                 <p>49, William Gopallawa Mawatha, Kandy</p>
                 <p>077 4540 715 / 076 3039 728</p>
               </div>
-            </div>
+            </div> */}
 
             {/* User Info and Logout */}
             <div className="flex items-center gap-2 md:gap-3">
-              <div className="flex items-center gap-2 text-sm">
+              {/* <div className="flex items-center gap-2 text-sm">
                 <User className="w-4 h-4 text-[rgb(49,105,78)]" />
                 <span className="text-[rgb(49,105,78)] font-medium hidden sm:inline">
                   {username}
                 </span>
-              </div>
+              </div> */}
               
               <Button
                 onClick={handleLogout}
